@@ -1,0 +1,41 @@
+{
+    "stage_code":  "1002B_PROGRESSIVE_SURFACE_MODE_AND_BUSINESS_PACK_LAYOUT_PRESET_FIXTURE",
+    "checks":  [
+                   {
+                       "id":  "surface_modes_include_guided_focus_grid_analysis_support_display_control",
+                       "pass":  true
+                   },
+                   {
+                       "id":  "business_pack_recommended_surface_modes_defined",
+                       "pass":  true
+                   },
+                   {
+                       "id":  "teaching_plan_not_default_grid_studio",
+                       "pass":  true
+                   },
+                   {
+                       "id":  "resource_library_support_layer_not_default_studio",
+                       "pass":  true
+                   },
+                   {
+                       "id":  "classroom_teaching_studio_includes_teacher_control_and_public_display",
+                       "pass":  true
+                   },
+                   {
+                       "id":  "student_evaluation_analysis_board",
+                       "pass":  true
+                   },
+                   {
+                       "id":  "resource_curation_grid_studio",
+                       "pass":  true
+                   },
+                   {
+                       "id":  "teacher_override_and_restore_default_defined",
+                       "pass":  true
+                   },
+                   {
+                       "id":  "no_dependency_install_or_real_frontend_change",
+                       "pass":  true
+                   }
+               ]
+}

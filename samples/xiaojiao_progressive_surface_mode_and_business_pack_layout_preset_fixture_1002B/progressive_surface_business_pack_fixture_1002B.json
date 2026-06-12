@@ -1,0 +1,323 @@
+{
+    "fixture_id":  "progressive_surface_mode_business_pack_layout_preset_fixture_1002B",
+    "stage_code":  "1002B_PROGRESSIVE_SURFACE_MODE_AND_BUSINESS_PACK_LAYOUT_PRESET_FIXTURE",
+    "fixture_type":  "static_surface_schema_business_pack_preset_fixture_only",
+    "surface_modes":  [
+                          {
+                              "mode":  "guided_flow",
+                              "complexity":  "low",
+                              "use_case":  "few_step_generation_and_teacher_confirmation",
+                              "grid_required":  false
+                          },
+                          {
+                              "mode":  "light_entry",
+                              "complexity":  "low",
+                              "use_case":  "daily entry and top priority work",
+                              "grid_required":  false
+                          },
+                          {
+                              "mode":  "focus_surface",
+                              "complexity":  "medium",
+                              "use_case":  "single primary work object with compact supporting materials",
+                              "grid_required":  false
+                          },
+                          {
+                              "mode":  "grid_studio",
+                              "complexity":  "high",
+                              "use_case":  "multi-card complex production work",
+                              "grid_required":  true
+                          },
+                          {
+                              "mode":  "analysis_board",
+                              "complexity":  "high_data",
+                              "use_case":  "student work evaluation and learning analysis",
+                              "grid_required":  true
+                          },
+                          {
+                              "mode":  "support_layer",
+                              "complexity":  "background",
+                              "use_case":  "resource library as search, retrieval, recommendation and reference layer",
+                              "grid_required":  false
+                          },
+                          {
+                              "mode":  "resource_drawer",
+                              "complexity":  "supporting",
+                              "use_case":  "compact related resources inside another task",
+                              "grid_required":  false
+                          },
+                          {
+                              "mode":  "resource_picker",
+                              "complexity":  "supporting",
+                              "use_case":  "select image PPT document or student work for current task",
+                              "grid_required":  false
+                          },
+                          {
+                              "mode":  "teacher_control_surface",
+                              "complexity":  "classroom_runtime_future",
+                              "use_case":  "teacher control side for classroom teaching studio",
+                              "grid_required":  false,
+                              "runtime_implemented":  false
+                          },
+                          {
+                              "mode":  "public_display_surface",
+                              "complexity":  "classroom_runtime_future",
+                              "use_case":  "large screen student-visible display surface",
+                              "grid_required":  false,
+                              "runtime_implemented":  false
+                          }
+                      ],
+    "grid_layout_schema":  {
+                               "columns":  12,
+                               "unit_px":  8,
+                               "preset_widths":  [
+                                                     3,
+                                                     4,
+                                                     6,
+                                                     8,
+                                                     12
+                                                 ],
+                               "bounded_layout":  true,
+                               "infinite_canvas":  false,
+                               "restore_recommended_layout_available":  true
+                           },
+    "zone_types":  [
+                       "primary_work_zone",
+                       "resource_zone",
+                       "tool_zone",
+                       "analysis_zone",
+                       "agent_note_layer",
+                       "output_zone",
+                       "work_log_zone",
+                       "teacher_control_zone",
+                       "public_display_zone",
+                       "support_resource_layer"
+                   ],
+    "card_types":  [
+                       "primary_work_object_card",
+                       "resource_card",
+                       "tool_card",
+                       "analysis_card",
+                       "agent_note_card",
+                       "output_card",
+                       "work_log_card",
+                       "teaching_flow_card",
+                       "display_block_card",
+                       "teacher_control_card",
+                       "resource_picker_card"
+                   ],
+    "card_allowed_zone_rules":  [
+                                    {
+                                        "card_type":  "primary_work_object_card",
+                                        "allowed_zones":  [
+                                                              "primary_work_zone"
+                                                          ],
+                                        "hide_allowed":  false,
+                                        "must_remain_visible":  true
+                                    },
+                                    {
+                                        "card_type":  "resource_card",
+                                        "allowed_zones":  [
+                                                              "resource_zone",
+                                                              "support_resource_layer",
+                                                              "primary_work_zone"
+                                                          ],
+                                        "default_state":  "drawer_or_collapsed"
+                                    },
+                                    {
+                                        "card_type":  "tool_card",
+                                        "allowed_zones":  [
+                                                              "tool_zone"
+                                                          ],
+                                        "default_state":  "docked_icon_or_collapsed"
+                                    },
+                                    {
+                                        "card_type":  "analysis_card",
+                                        "allowed_zones":  [
+                                                              "analysis_zone"
+                                                          ],
+                                        "visible_modes":  [
+                                                              "analysis_board",
+                                                              "grid_studio"
+                                                          ]
+                                    },
+                                    {
+                                        "card_type":  "agent_note_card",
+                                        "allowed_zones":  [
+                                                              "agent_note_layer"
+                                                          ],
+                                        "attached_to_object_required":  true
+                                    },
+                                    {
+                                        "card_type":  "teacher_control_card",
+                                        "allowed_zones":  [
+                                                              "teacher_control_zone"
+                                                          ],
+                                        "runtime_implemented":  false
+                                    },
+                                    {
+                                        "card_type":  "display_block_card",
+                                        "allowed_zones":  [
+                                                              "public_display_zone",
+                                                              "primary_work_zone"
+                                                          ],
+                                        "runtime_implemented":  false
+                                    }
+                                ],
+    "business_pack_layout_presets":  [
+                                         {
+                                             "business_pack":  "teaching_plan_pack",
+                                             "recommended_surface_mode":  "guided_flow",
+                                             "not_default_grid_studio":  true,
+                                             "reason":  "semester plan is a few-step upstream planning and confirmation task",
+                                             "registered_cards":  [
+                                                                      "plan_step_card",
+                                                                      "calendar_summary_card",
+                                                                      "teacher_confirmation_card"
+                                                                  ],
+                                             "default_layout":  "stepper_then_review",
+                                             "teacher_override_allowed":  true,
+                                             "restore_default_layout":  true
+                                         },
+                                         {
+                                             "business_pack":  "lesson_design_pack",
+                                             "recommended_surface_mode":  "focus_surface",
+                                             "optional_surface_modes":  [
+                                                                            "grid_studio"
+                                                                        ],
+                                             "reason":  "lesson design starts as a primary work object and can expand when many materials/tools are opened",
+                                             "registered_cards":  [
+                                                                      "lesson_design_card",
+                                                                      "textbook_catalog_resource_card",
+                                                                      "curriculum_standard_resource_card",
+                                                                      "handout_tool_card",
+                                                                      "rubric_tool_card",
+                                                                      "agent_note_card"
+                                                                  ],
+                                             "default_layout":  "primary_object_with_compact_resources",
+                                             "teacher_override_allowed":  true,
+                                             "restore_default_layout":  true
+                                         },
+                                         {
+                                             "business_pack":  "classroom_teaching_studio_pack",
+                                             "recommended_surface_mode":  "grid_studio",
+                                             "additional_surfaces":  [
+                                                                         "teacher_control_surface",
+                                                                         "public_display_surface"
+                                                                     ],
+                                             "reason":  "not merely slide generation; organizes teaching flow, display blocks, teacher controls, tools, resources, interaction and evaluation",
+                                             "registered_cards":  [
+                                                                      "teaching_flow_card",
+                                                                      "display_block_card",
+                                                                      "teacher_control_card",
+                                                                      "student_task_card",
+                                                                      "timer_card",
+                                                                      "resource_card",
+                                                                      "evaluation_prompt_card",
+                                                                      "agent_note_card"
+                                                                  ],
+                                             "default_layout":  "teaching_flow_left_primary_display_center_tools_resources_right",
+                                             "teacher_override_allowed":  true,
+                                             "restore_default_layout":  true,
+                                             "runtime_implemented":  false
+                                         },
+                                         {
+                                             "business_pack":  "student_evaluation_pack",
+                                             "recommended_surface_mode":  "analysis_board",
+                                             "reason":  "student work evaluation requires evidence, dimension distribution, student list and teacher review",
+                                             "registered_cards":  [
+                                                                      "student_work_table_card",
+                                                                      "artwork_gallery_card",
+                                                                      "dimension_distribution_card",
+                                                                      "attention_student_card",
+                                                                      "comment_candidate_tool_card",
+                                                                      "teacher_review_gate_card"
+                                                                  ],
+                                             "default_layout":  "evaluation_table_and_artwork_gallery_with_analysis_zone",
+                                             "teacher_override_allowed":  true,
+                                             "restore_default_layout":  true
+                                         },
+                                         {
+                                             "business_pack":  "resource_library_pack",
+                                             "recommended_surface_mode":  "support_layer",
+                                             "additional_surfaces":  [
+                                                                         "resource_drawer",
+                                                                         "resource_picker"
+                                                                     ],
+                                             "not_default_grid_studio":  true,
+                                             "reason":  "resource library is warehouse plus index plus recommendation layer, not a daily main studio",
+                                             "registered_cards":  [
+                                                                      "resource_search_card",
+                                                                      "related_resource_drawer_card",
+                                                                      "resource_picker_card",
+                                                                      "resource_reference_card"
+                                                                  ],
+                                             "default_layout":  "hidden_support_layer_until_invoked",
+                                             "teacher_override_allowed":  false,
+                                             "restore_default_layout":  true
+                                         },
+                                         {
+                                             "business_pack":  "resource_curation_pack",
+                                             "recommended_surface_mode":  "grid_studio",
+                                             "reason":  "complex resource curation and teaching scene bundle assembly can open a workspace",
+                                             "registered_cards":  [
+                                                                      "resource_collection_card",
+                                                                      "image_material_card",
+                                                                      "ppt_fragment_card",
+                                                                      "document_card",
+                                                                      "student_work_card",
+                                                                      "scene_bundle_output_card"
+                                                                  ],
+                                             "default_layout":  "collection_center_materials_left_output_right",
+                                             "teacher_override_allowed":  true,
+                                             "restore_default_layout":  true
+                                         }
+                                     ],
+    "layout_memory_policy":  {
+                                 "current_task_layout":  "saved_per_work_object",
+                                 "same_business_pack_layout_preference":  "candidate_only_until_teacher_confirmation",
+                                 "resource_library_layout_memory":  "not_default_studio_no_global_workspace_memory",
+                                 "classroom_teaching_studio_layout_memory":  "future_candidate_only_no_runtime_write",
+                                 "memory_written":  false
+                             },
+    "teacher_override_layout":  {
+                                    "allowed":  true,
+                                    "constrained_by_card_allowed_zone_rules":  true,
+                                    "primary_object_cannot_be_hidden":  true,
+                                    "restore_default_layout_available":  true
+                                },
+    "restore_default_layout":  {
+                                   "label":  "restore_xiaojiao_recommended_layout",
+                                   "available_for_all_business_packs":  true,
+                                   "resets_to_business_pack_layout_preset":  true
+                               },
+    "resource_layer_policy":  {
+                                  "resource_library_is_default_support_layer":  true,
+                                  "resource_drawer_for_related_resources":  true,
+                                  "resource_picker_for_explicit_selection":  true,
+                                  "resource_curation_pack_enters_grid_studio":  true,
+                                  "resource_library_as_main_studio_default":  false
+                              },
+    "classroom_teaching_studio_future_scope":  {
+                                                   "replaces_ppt_direction":  "teaching_scene_bundle_not_slides_only",
+                                                   "includes_teacher_control_surface":  true,
+                                                   "includes_public_display_surface":  true,
+                                                   "includes_student_task_surface_future":  true,
+                                                   "runtime_implemented":  false,
+                                                   "provider_model_called":  false
+                                               },
+    "boundary_flags":  {
+                           "dependency_installed":  false,
+                           "real_frontend_modified":  false,
+                           "runtime_connected":  false,
+                           "provider_model_called":  false,
+                           "database_written":  false,
+                           "memory_written":  false,
+                           "Feishu_written":  false,
+                           "formal_export_created":  false,
+                           "real_ui_implemented":  false,
+                           "production_component_selected":  false,
+                           "classroom_runtime_implemented":  false,
+                           "public_display_runtime_implemented":  false,
+                           "teacher_control_runtime_implemented":  false
+                       }
+}

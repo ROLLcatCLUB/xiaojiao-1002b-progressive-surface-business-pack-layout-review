@@ -1,0 +1,66 @@
+{
+    "package_code":  "1002_XIAOJIAO_PROGRESSIVE_GRID_WORK_SURFACE_PACKAGE",
+    "stage_code":  "1002B_PROGRESSIVE_SURFACE_MODE_AND_BUSINESS_PACK_LAYOUT_PRESET_FIXTURE",
+    "stage_type":  "progressive_surface_mode_business_pack_fixture_only",
+    "final_status_target":  "XIAOJIAO_PROGRESSIVE_SURFACE_MODE_AND_BUSINESS_PACK_LAYOUT_PRESET_FIXTURE_PASS",
+    "source_gate":  {
+                        "requires_stage":  "1002A_XIAOJIAO_GRID_BASED_DYNAMIC_WORK_SURFACE_TECH_SURVEY_AND_CONTRACT",
+                        "requires_review_decision":  "ACCEPT",
+                        "source_files":  [
+                                             "docs/audit/xiaojiao_grid_based_dynamic_work_surface_tech_survey_and_contract_1002A_review_decision.json",
+                                             "docs/foundation/xiaojiao_grid_based_dynamic_work_surface_tech_survey_and_contract_1002A.json"
+                                         ]
+                    },
+    "required_schema_parts":  [
+                                  "surface_mode",
+                                  "zone_type",
+                                  "card_type",
+                                  "card_registry",
+                                  "grid_layout_schema",
+                                  "business_pack_layout_preset",
+                                  "layout_memory_policy",
+                                  "teacher_override_layout",
+                                  "restore_default_layout",
+                                  "card_allowed_zone_rules",
+                                  "business_pack_recommended_surface_mode",
+                                  "support_layer_resource_policy",
+                                  "teacher_control_surface",
+                                  "public_display_surface"
+                              ],
+    "required_business_packs":  [
+                                    "teaching_plan_pack",
+                                    "lesson_design_pack",
+                                    "classroom_teaching_studio_pack",
+                                    "student_evaluation_pack",
+                                    "resource_library_pack",
+                                    "resource_curation_pack"
+                                ],
+    "core_judgments":  [
+                           "not_all_businesses_use_grid_studio",
+                           "business_pack_declares_recommended_surface_mode",
+                           "resource_library_is_support_layer_not_default_studio",
+                           "resource_curation_can_enter_grid_studio",
+                           "classroom_teaching_studio_replaces_slides_direction_but_no_runtime_implementation"
+                       ],
+    "hard_boundaries":  {
+                            "dependency_installed":  false,
+                            "real_frontend_modified":  false,
+                            "runtime_connected":  false,
+                            "provider_model_called":  false,
+                            "database_written":  false,
+                            "memory_written":  false,
+                            "Feishu_written":  false,
+                            "formal_export_created":  false,
+                            "real_ui_implemented":  false,
+                            "production_component_selected":  false,
+                            "classroom_runtime_implemented":  false,
+                            "public_display_runtime_implemented":  false,
+                            "teacher_control_runtime_implemented":  false
+                        },
+    "next_stage":  "1002B_REVIEW_PENDING_BEFORE_UI_PROTOTYPE_OR_DEPENDENCY_INSTALL",
+    "deferred":  [
+                     "1002C_STATIC_UI_PROTOTYPE",
+                     "1002D_DEPENDENCY_SANDBOX",
+                     "1003A_CLASSROOM_TEACHING_STUDIO_CONCEPT_CONTRACT"
+                 ]
+}
